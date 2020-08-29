@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import Dashboard from '../components/dashboard/Dashboard';
+import Header from '../header/Header';
+import Dashboard from '../dashboard/Dashboard';
 
 const Password = ({ validPassword, handlePasswordChange }) => (
   <div className="login__textfield login__textfield--password">
