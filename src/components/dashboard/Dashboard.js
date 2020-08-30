@@ -26,7 +26,10 @@ const Dashboard = () => {
   return (
     <main className="main-content main-content--dashboard">
       <div className="logged-in-content">
-        <PageHeader />
+        <PageHeader 
+          pageHeaderTitle="Your company dashboard"
+          pageHeaderCopy="Manage people, view history &amp; see how your projects are doing."
+        />
         <div className="dashboard">
           <div className="dashboard__users">
             <ListLoading isLoading={appState.loading} users={appState.users} />

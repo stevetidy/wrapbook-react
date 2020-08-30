@@ -1,10 +1,10 @@
 import React from 'react';
 
-const PageHeader = () => {
+const PageHeader = ({pageHeaderTitle, pageHeaderCopy}) => {
   return (
     <div class="page-header">
-      <h1 class="page-header__title">Your company dashboard</h1>
-      <p class="page-header__copy">Manage people, view history & see how your projects are doing.</p>
+      <h1 class="page-header__title">{pageHeaderTitle}</h1>
+      <p class="page-header__copy">{pageHeaderCopy}</p>
     </div>
   )
 };
