@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PageHeader from '../page-header/PageHeader';
+import Invite from './Invite';
 import List from './List';
 import withListLoading from './withListLoading';
-import Invite from './Invite';
 
 // Inspired by: https://www.smashingmagazine.com/2020/06/rest-api-react-fetch-axios/
 const Dashboard = () => {
@@ -21,7 +21,6 @@ const Dashboard = () => {
         setAppState({ loading: false, users: users });
       });
   }, [setAppState]);
-
 
   return (
     <main className="main-content main-content--dashboard">
