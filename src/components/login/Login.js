@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../header/Header';
 import Dashboard from '../dashboard/Dashboard';
+// import Copylink from '../dashboard/Copylink';
 
 const Password = ({ validPassword, handlePasswordChange }) => (
   <div className="login__textfield login__textfield--password">

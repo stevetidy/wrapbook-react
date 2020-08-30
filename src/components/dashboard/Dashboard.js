@@ -21,11 +21,6 @@ const Dashboard = () => {
       });
   }, [setAppState]);
 
-  const inviteLink = `https://wrapbook.com/i/j93kda92`;
-  const copyInviteLink = () => {
-    alert(`Link copied: ${inviteLink}`);
-    navigator.clipboard.writeText(inviteLink);
-  }
 
   return (
     <main className="main-content main-content--dashboard">
@@ -39,9 +34,8 @@ const Dashboard = () => {
             <ListLoading isLoading={appState.loading} users={appState.users} />
           </div>
           <aside className="dashboard__aside">
-            <Invite copyInviteLink={copyInviteLink} inviteLink={inviteLink} />
+            <Invite />
           </aside>
-          <button onClick={copyInviteLink} className="button button--copy button--invite-mobile">Invite someone to Wrapbook</button>
         </div>
       </div>
     </main>
