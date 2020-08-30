@@ -1,12 +1,11 @@
 import React from 'react';
 import Header from '../header/Header';
 import Dashboard from '../dashboard/Dashboard';
-// import Copylink from '../dashboard/Copylink';
 
 const Password = ({ validPassword, handlePasswordChange }) => (
   <div className="login__textfield login__textfield--password">
     <label htmlFor="password" className="visuallyhidden">Password</label>
-    <input onChange={handlePasswordChange} className={"textfield" + (validPassword ? ' textfield--active' : '')} id="password" type="password" name="email" autoComplete="off" placeholder="Enter a password" />
+    <input onChange={handlePasswordChange} className={"textfield" + (validPassword ? ' textfield--active' : '')} id="password" type="password" name="password" autoComplete="off" placeholder="Enter a password" />
   </div>
 )
 
