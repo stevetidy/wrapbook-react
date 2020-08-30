@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PageHeader from '../page-header/PageHeader';
 import List from './List';
 import withListLoading from './withListLoading';
 import Invite from './Invite';
@@ -25,10 +26,7 @@ const Dashboard = () => {
   return (
     <main className="main-content main-content--dashboard">
       <div className="logged-in-content">
-        <div className="dashboard__header">
-          <h1 className="dashboard__title">Your company dashboard</h1>
-          <p className="dashboard__copy">Manage people, view history &amp; see how your projects are doing.</p>
-        </div>
+        <PageHeader />
         <div className="dashboard">
           <div className="dashboard__users">
             <ListLoading isLoading={appState.loading} users={appState.users} />
