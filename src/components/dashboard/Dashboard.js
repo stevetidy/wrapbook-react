@@ -9,7 +9,7 @@ const Dashboard = () => {
   const ListLoading = withListLoading(List);
   const [appState, setAppState] = useState({
     loading: false,
-    repos: null,
+    users: null,
   });
 
   useEffect(() => {
