@@ -1,17 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const Header = ({ showDashboard, setShowDashboard, setShowPassword, setValidPassword, setValidEmail }) => {
+const Header = (props) => {
   const handleLogout = (e) => {
     e.preventDefault();
-    setShowDashboard(false);
-    setShowPassword(false);
-    setValidPassword(false);
-    setValidEmail(false);
-  }
+    props.resetDashboard();
+  };
 
   const showMenu = (e) => {
-    document.body.classList.toggle('menu-open');
-  }
+    document.body.classList.toggle("menu-open");
+  };
 
   return (
     <header className="header">
@@ -22,14 +19,15 @@ const Header = ({ showDashboard, setShowDashboard, setShowPassword, setValidPass
           <li className="main-nav__item"><a href="https://example.com">Link</a></li>
           <li className="main-nav__item"><a href="https://example.com">Link</a></li>
           <li className="main-nav__item"><a href="https://example.com">Link</a></li>
-          {showDashboard ?
-            <li className="main-nav__item main-nav__item--logout"><button onClick={handleLogout}>Logout</button></li> :
+          {props.showDashboard ? (
+            <li className="main-nav__item main-nav__item--logout"><button onClick={handleLogout}>Logout</button></li>
+          ) : (
             <li className="main-nav__item main-nav__item--signup"><a href="https://example.com" className="main-nav__signup">Signup</a></li>
-          }
+          )}
         </ul>
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

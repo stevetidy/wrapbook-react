@@ -5,7 +5,15 @@ import Dashboard from '../dashboard/Dashboard';
 const Password = ({ validPassword, handlePasswordChange }) => (
   <div className="login__textfield login__textfield--password">
     <label htmlFor="password" className="visuallyhidden">Password</label>
-    <input onChange={handlePasswordChange} className={"textfield" + (validPassword ? ' textfield--active' : '')} id="password" type="password" name="password" autoComplete="off" placeholder="Enter a password" />
+    <input
+      onChange={handlePasswordChange}
+      className={"textfield" + (validPassword ? ' textfield--active' : '')}
+      id="password"
+      type="password"
+      name="password"
+      autoComplete="off"
+      placeholder="Enter a password"
+    />
   </div>
 )
 
@@ -39,14 +47,18 @@ const Login = () => {
     }
   }
 
+  const resetDashboard = () => {
+    setShowDashboard(false);
+    setShowPassword(false);
+    setValidPassword(false);
+    setValidEmail(false);
+  }
+
   return (
     <>
       <Header
+        resetDashboard={resetDashboard}
         showDashboard={showDashboard}
-        setShowDashboard={setShowDashboard}
-        setShowPassword={setShowPassword}
-        setValidPassword={setValidPassword}
-        setValidEmail={setValidEmail}
       />
       {showDashboard ? <UsersDashboard /> :
         <main className="main-content">
@@ -56,10 +68,22 @@ const Login = () => {
             <form>
               <div className="login__textfield">
                 <label htmlFor="email" className="visuallyhidden">Email</label>
-                <input onChange={handleEmailChange} className={"textfield" + (validEmail ? ' textfield--active' : '')} id="email" type="email" name="email" autoComplete="off" placeholder="Enter your email address" />
+                <input
+                  onChange={handleEmailChange}
+                  className={"textfield" + (validEmail ? ' textfield--active' : '')}
+                  id="email"
+                  type="email"
+                  name="email"
+                  autoComplete="off"
+                  placeholder="Enter your email address"
+                />
               </div>
               {showPassword ? <Password validPassword={validPassword} handlePasswordChange={handlePasswordChange} /> : null}
-              <button onClick={handleSubmit} className={"login__submit button" + (validEmail && validPassword ? ' button--active' : '')}>Continue to Wrapbook</button>
+              <button
+                onClick={handleSubmit}
+                className={"login__submit button" + (validEmail && validPassword ? ' button--active' : '')}>
+                  Continue to Wrapbook
+              </button>
             </form>
           </div>
         </main>
