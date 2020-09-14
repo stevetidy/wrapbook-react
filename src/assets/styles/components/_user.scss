@@ -137,7 +137,7 @@
         background-position: 50% 50%;
       }
 
-      &.true {
+      &--yes {
         &::before {
           content: "";
           background-color: $success;
@@ -145,7 +145,7 @@
         }
       }
 
-      &.false {
+      &--no {
         &::before {
           content: "";
           background-color: $error;

@@ -8,6 +8,8 @@ const List = (props) => {
     <>
       {
         users.collection.map((user) => {
+          const isCreated = (user.account_created === true);
+          const isOnboarded = (user.onboarded === true);
           return (
             <div className="user" key={user.id}>
               <a className="user__link" href={`/user/${user.id}`}>
@@ -27,8 +29,8 @@ const List = (props) => {
                   <li className="user__expenses-item"><svg className="icon icon--expense"><use href={sprite + "#icon-expense"}></use></svg> Paid: ${user.payments.paid}</li>
                 </ul>
                 <ul className="user__status">
-                  <li className={`user__status-item ${user.account_created}`}>Account created</li>
-                  <li className={`user__status-item ${user.onboarded}`}>Onboarded</li>
+                  <li className={(isCreated) ? 'user__status-item user__status-item--yes': 'user__status-item user__status-item--no'}>Account created</li>
+                  <li className={(isOnboarded) ? 'user__status-item user__status-item--yes': 'user__status-item user__status-item--no'}>Onboarded</li>
                 </ul>
               </a>
             </div>
