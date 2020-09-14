@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import PageHeader from '../page-header/PageHeader';
+import SectionHeader from '../section-header/SectionHeader';
 import Invite from './Invite';
 import List from './List';
 import withListLoading from './withListLoading';
@@ -25,9 +25,9 @@ const Dashboard = () => {
   return (
     <main className="main-content main-content--dashboard">
       <div className="logged-in-content">
-        <PageHeader 
-          pageHeaderTitle="Your company dashboard"
-          pageHeaderCopy="Manage people, view history &amp; see how your projects are doing."
+        <SectionHeader 
+          sectionHeaderTitle="Your company dashboard"
+          sectionHeaderCopy="Manage people, view history &amp; see how your projects are doing."
         />
         <div className="dashboard">
           <div className="dashboard__users">
